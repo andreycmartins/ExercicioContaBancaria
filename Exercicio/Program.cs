@@ -12,7 +12,7 @@ char resp = char.Parse(Console.ReadLine());
 
 if (resp == 'S' || resp == 's')
 {
-    Console.Write("Entre o depósito do valor inicial: ");
+    Console.Write("Entre o valor inicial da conta: ");
     double depositoInicial = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
     conta = new ContaBancaria(numero, titular, depositoInicial);
 }
@@ -22,4 +22,20 @@ else
 }
 
 Console.WriteLine("Dados da conta");
+Console.Write(conta);
+
+Console.WriteLine();
+Console.Write("Entre um valor para depósito: ");
+double deposito = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+conta.Deposito(deposito);
+
+Console.WriteLine("Dados da conta atualizados");
+Console.Write(conta);
+
+Console.WriteLine();
+Console.Write("Entre com um valor para saque: ");
+double saque = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+conta.Saque(saque);
+
+Console.WriteLine("Dados da conta atualizados");
 Console.Write(conta);
